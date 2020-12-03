@@ -32,7 +32,9 @@
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ----------------- |
 | task               | string     | null: false       |
-| prep              | reference  | foreign_key: true |
+| memo               | text       |                   |
+| prep               | reference  | foreign_key: true |
+| user               | reference  | foreign_key: true |
 
 - belongs_to :prep
 
