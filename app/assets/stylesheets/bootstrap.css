@@ -94,6 +94,22 @@ abbr[data-original-title] {
   text-decoration-skip-ink: none;
 }
 
+.lists-right {
+  display: flex;
+  list-style: none;
+  align-items: flex-end;
+}
+
+.user-name {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 3vw;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  border-bottom:1px solid white;
+}
+
 address {
   margin-bottom: 1rem;
   font-style: normal;
