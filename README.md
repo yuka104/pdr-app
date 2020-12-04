@@ -19,24 +19,14 @@
 | ------------------ | ---------- | ----------------- |
 | purpose            | text       | null: false       |
 | reason             | text       | null: false       |
+| task               | string     | null: false       |
+| memo               | text       |                   |
 | user               | reference  | foreign_key: true |
 
 ### Association
 
-- has_one :task
 - has_one :review
 - belongs_to :user
-
-## tasks テーブル
-
-| Column             | Type       | Options           |
-| ------------------ | ---------- | ----------------- |
-| task               | string     | null: false       |
-| memo               | text       |                   |
-| prep               | reference  | foreign_key: true |
-| user               | reference  | foreign_key: true |
-
-- belongs_to :prep
 
 ## reviews テーブル
 
