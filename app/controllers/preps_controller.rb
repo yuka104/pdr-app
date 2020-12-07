@@ -1,6 +1,7 @@
 class PrepsController < ApplicationController
 
   def index
+    @preps = Prep..order("created_at DESC")
   end
 
   def new
