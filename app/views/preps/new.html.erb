@@ -1,6 +1,38 @@
-<p>テスト</p>
-<p>テスト</p>
-<p>テスト</p>
-<p>テスト</p>
-<p>テスト</p>
-<p>テスト</p>
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>PREP(準備)</h2>
+    </div>
+    <div class='account-page__inner--right user-form'>
+       <%= form_with model: @prep, url: preps_path,local: true do |f| %>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :取組みの目的%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :purpose, placeholder: "取組みの目的" %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :取り組みたい理由 %>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :reason, placeholder:"取り組みたい理由" %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :取組みに必要なタスク%>
+          </div>
+          <div class='task-field-input'>
+            <%= f.text_area :task, size: "50x10", placeholder:"・取組みに必要なタスク" %>
+          </div>
+        </div>
+        <div class='actions'>
+          <%= f.submit "登録", class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

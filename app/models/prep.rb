@@ -4,7 +4,7 @@ class Prep < ApplicationRecord
 
   with_options presence: true do
     validates :purpose
-    validates :reson
+    validates :reason
     validates :task
   end
 end

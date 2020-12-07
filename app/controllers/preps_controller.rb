@@ -9,6 +9,11 @@ class PrepsController < ApplicationController
 
   def create
     @prep = Prep.new(prep_params)
+    if @prep.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
 
