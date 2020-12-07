@@ -201,7 +201,6 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  -ms-overflow-style: scrollbar;
 }
 
 figure {
@@ -489,7 +488,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 300px;
 }
 
 .img-thumbnail {
@@ -1675,8 +1674,32 @@ pre code {
   }
 }
 
-.footer {
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.preps-lists {
+  position: absolute;
   width: 100%;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.prep-list {
+  font-size: 30px;
+  border-bottom:3px solid #ffc107;
+}
+
+.footer-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.prep-name{
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 .table {
@@ -4712,6 +4735,10 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
+.prep-info{
+  list-style: none;
+}
+
 .card {
   position: relative;
   display: -ms-flexbox;
@@ -4724,6 +4751,7 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin-bottom:20px;
 }
 
 .card > hr {

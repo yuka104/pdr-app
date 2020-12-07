@@ -1,0 +1,62 @@
+  <div class= "prep-title">
+  <span class= "title">PREP(準備)</span>
+  </div>
+
+  <div class="pdr-items">
+    <div class="card">
+      <div class="card-header">
+        取組みの目的
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= @prep.purpose %>
+        </blockquote>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        取り組みたい理由
+      </div>
+      <div class="pcard-body">
+        <blockquote class="blockquote mb-2">
+          <%= @prep.reason %>
+        </blockquote>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        取組みに必要なタスク
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= @prep.task %>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class= "do-title">
+    <span class= "title">DO(実行)</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        タスクを実行して気づいたこと
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= @prep.memo %>
+          <%# <%=link%> 
+          <%# <%= form_with model: @prep, url: prep_path(prep.id),local: true do |f| %> 
+          <%# <%= f.text_area :memo, size: "50x5", class:"memo-form"%>
+          <div class='action-btn'>
+            <%= link_to '気づいたことを追加', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
+          </div> 
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="return-btn">
+    <%= link_to "#{current_user.name}さんのPDR一覧に戻る", root_path, class: "btn btn-outline-info my-3 ml-4" %>
+  </div>

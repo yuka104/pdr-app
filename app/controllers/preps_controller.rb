@@ -1,7 +1,7 @@
 class PrepsController < ApplicationController
 
   def index
-    @preps = Prep..order("created_at DESC")
+    @preps = Prep.order("id DESC")
   end
 
   def new
@@ -15,6 +15,18 @@ class PrepsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @prep = Prep.find(params[:id])
+  end
+  
+  def edit
+  end
+  
+  def update
+    @prep = Prep.find(params[:id])
+    @prep.update(prep_params)
   end
 
 

@@ -19,45 +19,61 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">PDR app</a>
-      <ul class='lists-right'>
-        <% if user_signed_in? %>
-        <div class="user-name">
-        <li><%= "#{current_user.name}さん" %></li>
-        </div>
-        <li><%= link_to '新しいPREP',  new_prep_path, class: "btn btn-light my-3" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-light my-3 ml-4" %></li>
-        <% else %>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "btn btn-light my-3" %></li>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "btn btn-light my-3 ml-4" %></li>
-        <% end %>
+ <div class="wrapper">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">PDR app</a>
+        <ul class='lists-right'>
+          <% if user_signed_in? %>
+          <div class="user-name">
+          <li><%= "#{current_user.name}さん" %></li>
+          </div>
+          <li><%= link_to '新しいPREP',  new_prep_path, class: "btn btn-light my-3" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-light my-3 ml-4" %></li>
+          <% else %>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "btn btn-light my-3" %></li>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "btn btn-light my-3 ml-4" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  
+    <% if user_signed_in? %>
+    <div class="preps-lists">
+      <span class="prep-list">
+       <%= "#{current_user.name}さんのPDR一覧" %>
+      </span>
+     <% @preps.each do |prep| %>
+      <ul class='list'>
+       <div class='prep-info'>
+        <li class='prep-name'>
+          <%= link_to "#{prep.purpose}", prep_path(prep.id) %>
+        </li>
+       </div>
       </ul>
+      <% end %>
     </div>
-  </nav>
-
-  <% if user_signed_in? %>
-   <% @prep.each do |item| %>
-   
-  <% else %>
-    <div class="container">
-      <div class="row align-items-center my-5">
-        <div class="col-lg-7">
-          <%= image_tag "prep-image.jpg", class:"img-fluid rounded mb-4 mb-lg-0" %>
-        </div>
-        <div class="col-lg-5">
-          <h2 class="font-weight-light">使いやすいPDR管理アプリ</h2>
-          <p>このアプリではシンプルで簡単にPDRサイクルを実行することができます。取組みの「準備」から「見直し」を通して、現状の把握と今後の改善を行うことができます。短期スパンで取り入れやすく、確実にスキルUPに繋がります。</p>
+     
+    <% else %>
+      <div class="container">
+        <div class="row align-items-center my-5">
+          <div class="col-lg-7">
+            <%= image_tag "prep-image.jpg", class:"img-fluid rounded mb-4 mb-lg-0" %>
+          </div>
+          <div class="col-lg-5">
+            <h2 class="font-weight-light">使いやすいPDR管理アプリ</h2>
+            <p>このアプリではシンプルで簡単にPDRサイクルを実行することができます。取組みの「準備」から「見直し」を通して、現状の把握と今後の改善を行うことができます。短期スパンで取り入れやすく、確実にスキルUPに繋がります。</p>
+          </div>
         </div>
       </div>
 
-      <div class="card text-white bg-warning my-5 py-4 text-center">
+      <div class="card text-white bg-warning my-2 py-2 text-center">
         <div class="card-body">
           <h4 class="text-white m-0">PDRサイクルを実行することで確実なスキルUPと最高のパフォーマンスが実現できます</h4>
         </div>
       </div>
-
+    <% end%>
+     <div class="footer-content">
       <div class="row">
         <div class="col-md-4 mb-5">
           <div class="card h-100">
@@ -87,15 +103,14 @@
           </div>
         </div>
       </div>
+      
+    <footer class="footer py-5 bg-info">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Yuka Kawano 2020</p>
+      </div>
+    </footer>
     </div>
-    <% end%>
-
-  <!-- Footer -->
-  <footer class="footer py-5 bg-info">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Yuka Kawano 2020</p>
-    </div>
-  </footer>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
