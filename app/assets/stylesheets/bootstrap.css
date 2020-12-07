@@ -489,7 +489,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 300px;
 }
 
 .img-thumbnail {
@@ -1675,8 +1675,32 @@ pre code {
   }
 }
 
-.footer {
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+}
+
+.preps-lists {
+  position: absolute;
   width: 100%;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.prep-list {
+  font-size: 30px;
+  border-bottom:3px solid #ffc107;
+}
+
+.footer-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.prep-name{
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 .table {
@@ -4710,6 +4734,10 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
   color: #fff;
+}
+
+.prep-info{
+  list-style: none;
 }
 
 .card {
