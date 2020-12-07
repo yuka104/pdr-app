@@ -94,3 +94,52 @@
   padding: 10px;
   letter-spacing: 1px;
 }
+
+.prep-title {
+  text-align: center;
+  margin: 30px auto;  
+}
+
+.title {
+  font-size: 40px;
+  border-bottom:3px solid #ffc107;
+}
+
+.card {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.card-header {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-body {
+  font-size: 15px;
+}
+
+.do-title {
+  text-align: center;
+  margin: 30px auto;  
+}
+
+.memo-form {
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+.return-btn {
+  text-align: center;
+}
+
+.action-btn {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}

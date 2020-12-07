@@ -41,13 +41,13 @@
     <% if user_signed_in? %>
     <div class="preps-lists">
       <span class="prep-list">
-       <%= "#{current_user.name}さんのPREP一覧" %>
+       <%= "#{current_user.name}さんのPDR一覧" %>
       </span>
      <% @preps.each do |prep| %>
       <ul class='list'>
        <div class='prep-info'>
         <li class='prep-name'>
-          <%= link_to "#{prep.purpose}",  prep_path(prep.id) %>
+          <%= link_to "#{prep.purpose}", prep_path(prep.id) %>
         </li>
        </div>
       </ul>
@@ -67,7 +67,7 @@
         </div>
       </div>
 
-      <div class="card text-white bg-warning my-5 py-4 text-center">
+      <div class="card text-white bg-warning my-3 py-3 text-center">
         <div class="card-body">
           <h4 class="text-white m-0">PDRサイクルを実行することで確実なスキルUPと最高のパフォーマンスが実現できます</h4>
         </div>
