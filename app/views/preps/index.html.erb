@@ -47,7 +47,7 @@
       <ul class='list'>
        <div class='prep-info'>
         <li class='prep-name'>
-          <%= prep.purpose %>
+          <%= link_to "#{prep.purpose}",  prep_path(prep.id) %>
         </li>
        </div>
       </ul>
