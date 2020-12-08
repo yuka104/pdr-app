@@ -37,6 +37,16 @@
     </div>
     <div class="card">
       <div class="card-header">
+        達成度
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= form.collection_select(:level_id, Level.all , :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        </blockquote>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
         うまくいったこと
       </div>
       <div class="prep-card-body">
