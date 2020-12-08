@@ -6,5 +6,6 @@ class Prep < ApplicationRecord
     validates :purpose
     validates :reason
     validates :task
+    validates :memo
   end
 end

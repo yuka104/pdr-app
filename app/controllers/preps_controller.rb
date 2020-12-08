@@ -22,14 +22,17 @@ class PrepsController < ApplicationController
   end
   
   def edit
+    @prep = Prep.find(params[:id])
   end
   
   def update
     @prep = Prep.find(params[:id])
-    @prep.update(prep_params)
+    if @prep.update(prep_params)
+      redirect_to prep_path(@prep.id)
+    else
+      render :edit
+    end
   end
-
-
 
   private
   def prep_params

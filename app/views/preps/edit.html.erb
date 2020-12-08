@@ -1,0 +1,21 @@
+<div class="pdr-items">
+  <div class= "do-title">
+      <span class= "title">DO(実行)</span>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      タスクを実行して気づいたこと
+    </div>
+    <div class="prep-card-body">
+      <blockquote class="blockquote mb-2">
+        <%= form_with(model: @prep, local: true) do |form| %>
+          <%= form.text_area :memo, size: "50x5", class:"memo-form"%>
+          <div class='action-btn'>
+           <%= form.submit "登録", class: 'btn btn-info'%>
+          </div> 
+        <% end %>
+      </blockquote>
+    </div>
+  </div>
+</div>

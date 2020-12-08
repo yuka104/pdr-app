@@ -44,13 +44,13 @@
       </div>
       <div class="prep-card-body">
         <blockquote class="blockquote mb-2">
+          <% if @prep.memo != nil %>
           <%= @prep.memo %>
-          <%# <%=link%> 
-          <%# <%= form_with model: @prep, url: prep_path(prep.id),local: true do |f| %> 
-          <%# <%= f.text_area :memo, size: "50x5", class:"memo-form"%>
+          <% else %>
           <div class='action-btn'>
-            <%= link_to '気づいたことを追加', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
+            <%= link_to '気づいたことを登録', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
           </div> 
+          <% end %>
         </blockquote>
       </div>
     </div>
