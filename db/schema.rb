@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_04_033300) do
+ActiveRecord::Schema.define(version: 2020_12_08_080858) do
 
   create_table "preps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "purpose", null: false
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 2020_12_04_033300) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_preps_on_user_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "result", null: false
+    t.integer "level_id", null: false
+    t.text "success", null: false
+    t.text "failure", null: false
+    t.text "improve", null: false
+    t.bigint "prep_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prep_id"], name: "index_reviews_on_prep_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -37,4 +49,5 @@ ActiveRecord::Schema.define(version: 2020_12_04_033300) do
   end
 
   add_foreign_key "preps", "users"
+  add_foreign_key "reviews", "preps"
 end

@@ -19,8 +19,8 @@
 | ------------------ | ---------- | ----------------- |
 | purpose            | text       | null: false       |
 | reason             | text       | null: false       |
-| task               | string     | null: false       |
-| memo               | text       |                   |
+| task               | text       | null: false       |
+| memo               | text       | null: false       |
 | user               | reference  | foreign_key: true |
 
 ### Association
