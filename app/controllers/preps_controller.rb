@@ -42,4 +42,5 @@ class PrepsController < ApplicationController
   def prep_params
     params.require(:prep).permit(:purpose, :reason, :task, :memo).merge(user_id: current_user.id)
   end
+
 end

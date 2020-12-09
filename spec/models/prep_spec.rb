@@ -10,6 +10,10 @@ RSpec.describe Prep, type: :model do
       it "全項目が存在すれば登録できる" do
         expect(@prep).to be_valid
       end
+      it "memoがなくても登録できる" do
+        @prep.memo = nil
+        expect(@prep).to be_valid
+      end
     end
 
     context '新規登録がうまくいかないとき' do
@@ -27,11 +31,6 @@ RSpec.describe Prep, type: :model do
         @prep.task = nil
         @prep.valid?
         expect(@prep.errors.full_messages).to include("Task can't be blank")
-      end
-      it "memoが空では登録できない" do
-        @prep.memo = nil
-        @prep.valid?
-        expect(@prep.errors.full_messages).to include("Memo can't be blank")
       end
     end
   end
