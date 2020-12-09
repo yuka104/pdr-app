@@ -23,6 +23,8 @@ class PrepsController < ApplicationController
   
   def edit
     @prep = Prep.find(params[:id])
+    @review = Review.new
+    @reviews = @prep.reviews.includes(:user)
   end
   
   def update

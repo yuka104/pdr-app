@@ -152,3 +152,7 @@
   text-align: center;
   margin: 30px auto;  
 }
+
+.select-box {
+  width: 300px;
+}
