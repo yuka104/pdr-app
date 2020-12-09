@@ -147,3 +147,12 @@
   padding: 10px 0 10px 10px;
   margin-bottom: 20px;
 }
+
+.review-title {
+  text-align: center;
+  margin: 30px auto;  
+}
+
+.select-box {
+  width: 300px;
+}

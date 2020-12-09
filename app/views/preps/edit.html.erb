@@ -1,21 +1,82 @@
 <div class="pdr-items">
-  <div class= "do-title">
-      <span class= "title">DO(実行)</span>
-  </div>
+  <% if @prep.memo == nil %>
+    <div class= "do-title">
+        <span class= "title">DO(実行)</span>
+    </div>
 
-  <div class="card">
-    <div class="card-header">
-      タスクを実行して気づいたこと
+    <div class="card">
+      <div class="card-header">
+        タスクを実行して気づいたこと
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= form_with(model: @prep, local: true) do |form| %>
+            <%= form.text_area :memo, size: "100x5", class:"memo-form"%>
+            <div class='action-btn'>
+            <%= form.submit "登録", class: 'btn btn-info'%>
+            </div> 
+          <% end %>
+        </blockquote>
+      </div>
     </div>
-    <div class="prep-card-body">
-      <blockquote class="blockquote mb-2">
-        <%= form_with(model: @prep, local: true) do |form| %>
-          <%= form.text_area :memo, size: "50x5", class:"memo-form"%>
-          <div class='action-btn'>
-           <%= form.submit "登録", class: 'btn btn-info'%>
-          </div> 
-        <% end %>
-      </blockquote>
+  <% else %>
+    <div class= "review-title">
+        <span class= "title">REVIEW(見直し)</span>
     </div>
-  </div>
+    <%= form_with(model: [@prep, @review], local: true) do |form| %>
+      <div class="card">
+        <div class="card-header">
+          取り組んだ結果
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
+            <%= form.text_area :result, size: "100x3", class:"memo-form"%>
+          </blockquote>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          達成度
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
+            <%= form.collection_select(:level_id, Level.all , :id, :name, {}, {class:"select-box"}) %>
+          </blockquote>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          うまくいったこと
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
+            <%= form.text_area :success, size: "50x3", class:"memo-form"%>
+          </blockquote>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          うまくいかなかったこと
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
+            <%= form.text_area :failure, size: "50x3", class:"memo-form"%>
+          </blockquote>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          改善すること
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
+            <%= form.text_area :improve, size: "50x3", class:"memo-form"%>
+          </blockquote>
+        </div>
+      </div>
+      <div class='action-btn'>
+      <%= form.submit "登録", class: 'btn btn-info'%>
+      </div> 
+    <% end %>
+ <% end %>
 </div>
