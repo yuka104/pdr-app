@@ -61,19 +61,72 @@
     <span class= "title">REVIEW(見直し)</span>
     </div>
 
-    <div class="card">
-      <div class="card-header">
-        準備から実行を通しての見直し
-      </div>
-      <div class="prep-card-body">
-        <blockquote class="blockquote mb-2">
-
+    <% if @reviews == nil %>
+      <div class="card">
+        <div class="card-header">
+          準備から実行を通しての見直し
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
           <div class='action-btn'>
             <%= link_to '見直しを登録', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
           </div>
+          </blockquote>
+        </div>
+      </div>
+    <% end %>
+     <% @reviews.each do |review| %>
+     <div class="card">
+      <div class="card-header">
+        取り組んだ結果
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= review.result %>
         </blockquote>
       </div>
     </div>
+     <div class="card">
+      <div class="card-header">
+        達成度
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= Level.find(review.level_id).name %>
+        </blockquote>
+      </div>
+    </div>
+     <div class="card">
+      <div class="card-header">
+        うまくいったこと
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= review.success %>
+        </blockquote>
+      </div>
+    </div>
+     <div class="card">
+      <div class="card-header">
+        うまくいかなかったこと
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= review.result %>
+        </blockquote>
+      </div>
+    </div>
+     <div class="card">
+      <div class="card-header">
+        改善すること
+      </div>
+      <div class="prep-card-body">
+        <blockquote class="blockquote mb-2">
+          <%= review.improve %>
+        </blockquote>
+      </div>
+    </div>
+    <% end %>
 
  </div>
 

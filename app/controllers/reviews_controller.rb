@@ -12,9 +12,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   private
   def review_params
     params.require(:review).permit(:result, :level_id, :success, :failure, :improve).merge(user_id: current_user.id, prep_id: params[:prep_id])
