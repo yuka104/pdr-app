@@ -58,7 +58,7 @@
     <span class= "title">REVIEW(見直し)</span>
     </div>
 
-    <% if @review == nil %>
+     <% if @reviews == nil %>
       <div class="card">
         <div class="card-header">
           準備から実行を通しての見直し
@@ -71,8 +71,7 @@
           </blockquote>
         </div>
       </div>
-    <% end %>
-
+    <% else %>
      <% @reviews.each do |review| %>
      <div class="card">
       <div class="card-header">
@@ -125,6 +124,8 @@
       </div>
     </div>
     <% end %>
+    <%end%>
+
  </div>
   <div class="btns">
     <div class="return-btn">
