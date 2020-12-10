@@ -124,10 +124,11 @@
       </div>
     </div>
     <% end %>
-
  </div>
-
 
   <div class="return-btn">
     <%= link_to "#{current_user.name}さんのPDR一覧に戻る", root_path, class: "btn btn-outline-info my-3 ml-4" %>
+  </div>
+  <div class="return-btn">
+    <%= link_to "PDRを削除する", prep_path(@prep.id), method: :delete, class: "btn btn-outline-info my-3 ml-4" %>
   </div>

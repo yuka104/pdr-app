@@ -38,6 +38,13 @@ class PrepsController < ApplicationController
     end
   end
 
+  def destroy
+    @prep = Prep.find(params[:id])
+    if @prep.destroy
+      redirect_to root_path
+    end
+  end
+
   private
   def prep_params
     params.require(:prep).permit(:purpose, :reason, :task, :memo).merge(user_id: current_user.id)
