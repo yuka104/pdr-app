@@ -46,13 +46,10 @@
       </div>
       <div class="prep-card-body">
         <blockquote class="blockquote mb-2">
-          <% if @prep.memo != nil %>
           <%= @prep.memo %>
-          <% else %>
           <div class='action-btn'>
             <%= link_to '気づいたことを登録', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
           </div> 
-          <% end %>
         </blockquote>
       </div>
     </div>
@@ -61,7 +58,7 @@
     <span class= "title">REVIEW(見直し)</span>
     </div>
 
-    <% if @reviews == nil %>
+    
       <div class="card">
         <div class="card-header">
           準備から実行を通しての見直し
@@ -74,7 +71,7 @@
           </blockquote>
         </div>
       </div>
-    <% end %>
+
      <% @reviews.each do |review| %>
      <div class="card">
       <div class="card-header">
