@@ -1,7 +1,8 @@
 class PrepsController < ApplicationController
+  before_action :authenticate_user!, only:[:create, :update, :destory]
 
   def index
-    @preps = Prep.order("id DESC")
+      @preps = Prep.includes(:user).order("id DESC")
   end
 
   def new

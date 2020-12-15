@@ -10,7 +10,7 @@
       <div class="prep-card-body">
         <blockquote class="blockquote mb-2">
           <%= form_with(model: @prep, local: true) do |form| %>
-            <%= form.text_area :memo, size: "100x5", class:"memo-form"%>
+            <%= form.text_area :memo, size: "100x5", placeholder:"・気づいたこと", class:"memo-form"%>
             <div class='action-btn'>
             <%= form.submit "登録", class: 'btn btn-info'%>
             </div> 
@@ -29,7 +29,7 @@
         </div>
         <div class="prep-card-body">
           <blockquote class="blockquote mb-2">
-            <%= form.text_area :result, size: "100x3", class:"memo-form"%>
+            <%= form.text_area :result, size: "100x3", placeholder:"取り組んだ結果", class:"memo-form"%>
           </blockquote>
         </div>
       </div>
@@ -49,7 +49,7 @@
         </div>
         <div class="prep-card-body">
           <blockquote class="blockquote mb-2">
-            <%= form.text_area :success, size: "100x3", class:"memo-form"%>
+            <%= form.text_area :success, size: "100x3", placeholder:"・うまくいったこと", class:"memo-form"%>
           </blockquote>
         </div>
       </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="prep-card-body">
           <blockquote class="blockquote mb-2">
-            <%= form.text_area :failure, size: "100x3", class:"memo-form"%>
+            <%= form.text_area :failure, size: "100x3", placeholder:"・うまくいかなかったこと", class:"memo-form"%>
           </blockquote>
         </div>
       </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="prep-card-body">
           <blockquote class="blockquote mb-2">
-            <%= form.text_area :improve, size: "100x3", class:"memo-form"%>
+            <%= form.text_area :improve, size: "100x3", placeholder:"・改善すること", class:"memo-form"%>
           </blockquote>
         </div>
       </div>

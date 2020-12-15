@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  has_many :preps
+ has_many :preps
   
   validates :name, presence: true
   validates :email, uniqueness: true
