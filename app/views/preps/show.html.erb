@@ -58,20 +58,7 @@
     <span class= "title">REVIEW(見直し)</span>
     </div>
 
-     <% if @reviews %>
-      <div class="card">
-        <div class="card-header">
-          準備から実行を通しての見直し
-        </div>
-        <div class="prep-card-body">
-          <blockquote class="blockquote mb-2">
-          <div class='action-btn'>
-            <%= link_to '見直しを登録', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
-          </div>
-          </blockquote>
-        </div>
-      </div>
-    <% else %>
+    <% if @reviews != nil %>
      <% @reviews.each do |review| %>
      <div class="card">
       <div class="card-header">
@@ -112,20 +99,29 @@
           <%= review.result %>
         </blockquote>
       </div>
-    </div>
-     <div class="card">
-      <div class="card-header">
-        改善すること
       </div>
-      <div class="prep-card-body">
-        <blockquote class="blockquote mb-2">
-          <%= review.improve %>
-        </blockquote>
+      <div class="card">
+        <div class="card-header">
+          改善すること
+        </div>
+        <div class="prep-card-body">
+          <blockquote class="blockquote mb-2">
+            <%= review.improve %>
+          </blockquote>
+        </div>
       </div>
-    </div>
+     <% end %>
     <% end %>
-    <%end%>
 
+     <div class="card">
+     <div class="prep-card-body">
+      <blockquote class="blockquote mb-2">
+       <div class='action-btn'>
+        <%= link_to '見直しを登録', edit_prep_path, class: 'btn btn-outline-info my-3 ml-4' %>
+       </div> 
+      </blockquote>
+     </div>
+     </div>
  </div>
   <div class="btns">
     <div class="return-btn">

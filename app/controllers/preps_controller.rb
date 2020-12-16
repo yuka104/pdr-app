@@ -20,7 +20,6 @@ class PrepsController < ApplicationController
 
   def show
     @prep = Prep.find(params[:id])
-    @review = Review.new
     @reviews = @prep.reviews.includes(:user)
   end
   

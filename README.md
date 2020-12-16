@@ -29,7 +29,7 @@ prep(準備)&rarr;do(実行)&rarr;review(見直し)と順番に投稿ができ�
 PDRサイクルの簡単な説明が記述してあります。
 ![Pdr Image 1](https://i.gyazo.com/204580b3bf8da1dea4c1a514a584b1c1.png)  
 
-# 会員登録画面
+# 会員登録機能
 ![Pdr Image 2](https://i.gyazo.com/bbaef00c5ce1baa7daf3cf4b6330a91a.png)  
 
 # ログイン後のトップ画面
@@ -46,17 +46,23 @@ PDRサイクルの簡単な説明が記述してあります。
 # REVIEW(見直し)登録画面
 ![Pdr Image 6](https://gyazo.com/f50ad50c15e13aaf999ef0071a0076e2/raw)  
 
-# 詳細画面
-prepからreviewまでが一覧で確認でき、見返したいものはそのまま保存し、  
-見返しが必要ないものは削除ができます。  
-![Pdr Image 6](https://gyazo.com/f50ad50c15e13aaf999ef0071a0076e2/raw)  
+# 詳細機能
+prepからreviewまでが一覧で確認でき、一覧画面に戻ることができます。  
+![Pdr Image 7](https://gyazo.com/fa0b1e48bf7532bdd5b905d090f1b6a4/raw)  
+
+# 削除機能
+![Pdr Image 8](https://gyazo.com/2bdfbefb9872223625dea1963aa50806/raw)
 
 
-## 実装予定の機能
-カレンダー機能の実装
+# 実装予定の機能
+登録ボタンの非表示設定
+結合テスト  
+カレンダー機能の実装  
+グループ機能  
+管理者機能  
 
-## データベース設計
-![Er Image 1](https://gyazo.com/e6be34e24d128bfa6ca60a1055c66d2a.png)
+# データベース設計
+![Er Image 9](https://gyazo.com/e6be34e24d128bfa6ca60a1055c66d2a.png)
 
 
 # テーブル設計
